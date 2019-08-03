@@ -6,6 +6,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Team = require('./models/teams.js')
 
 //___________________
 //Port
@@ -51,10 +52,22 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
+
+// INDEX
 app.get('/' , (req, res) => {
-  res.send('I am the champion!');
+  Team.find({}, (error, allTeams)=> {
+    res.render('index.ejs', {
+      teams: allTeams
+    });
+  })
 });
 
+// CREATE
+app.post('/', (req,res) => {
+  Team.create(req.body, (error, createdTeam) => {
+    res.send(createdTeam)
+  })
+})
 
 //___________________
 //Listener

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Fantasy Manager Index</h1>
+      <% for(let i=0; i < teams.length; i++) { %>
+        <div>
+          <%=teams[i].name%>
+          <img src="<%=teams[i].logo%>" alt="<%=teams[i].name%>">
+          <%=teams[i].sport%>
+          <%=teams[i].place%>
+      <% } %>
+        </div>
+  </body>
+</html>
