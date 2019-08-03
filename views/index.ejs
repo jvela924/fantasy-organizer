@@ -3,16 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/css/styles.css">
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src='/jquery/jquery.js' type="text/javascript"></script>
   </head>
   <body>
-    <h1>Fantasy Manager Index</h1>
-      <% for(let i=0; i < teams.length; i++) { %>
-        <div>
-          <%=teams[i].name%>
-          <img src="<%=teams[i].logo%>" alt="<%=teams[i].name%>">
-          <%=teams[i].sport%>
-          <%=teams[i].place%>
-      <% } %>
+    <h1>Fantasy Manager</h1>
+      <div class="teamContainer">
+        <h2 class="sport">Baseball</h2><br>
+        <div class="baseballContainer">
         </div>
+        <h2 class="sport">Football</h2><br>
+        <div class="footballContainer">
+        </div>
+        <% for(let i=0; i < teams.length; i++) { %>
+          <% if(teams[i].sport === 'Football') { %>
+          <div class="footballTeam">
+            <h2><%=teams[i].name%></h2>
+            <a href="/<%=teams[i].id%>"><img class="teamLogo" src="<%=teams[i].logo%>" alt="<%=teams[i].name%>"></a>
+            <p class="textIndex"><%=teams[i].sport%></p>
+            <p class="textIndex"><%=teams[i].place%></p>
+          </div>
+      <% } else { %>
+        <div class="baseballTeam">
+          <h2><%=teams[i].name%></h2>
+          <a href="/<%=teams[i].id%>"><img class="teamLogo" src="<%=teams[i].logo%>" alt="<%=teams[i].name%>"></a>
+          <p class="textIndex"><%=teams[i].sport%></p>
+          <p class="textIndex"><%=teams[i].place%></p>
+        </div>
+        <% } %>
+      <% } %>
+    </div>
   </body>
 </html>

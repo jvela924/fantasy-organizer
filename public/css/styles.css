@@ -1,0 +1,27 @@
+h1 {
+  font-size: 50px;
+}
+
+.sport {
+  font-size: 30px;
+}
+
+.teamLogo {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  border: 1px solid blue;
+}
+
+.baseballContainer, .footballContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.footballTeam, .baseballTeam {
+  width: 33%;
+}

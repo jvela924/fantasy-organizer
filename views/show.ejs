@@ -5,6 +5,23 @@
     <title></title>
   </head>
   <body>
-
+    <h1>Team Show Page</h1>
+    <div class="teamShow">
+      <%=team.name%>
+      <img src="<%=team.logo%>" alt="<%=team.name%>">
+      <%=team.sport%>
+      <%=team.platform%>
+      <%=team.place%>
+      <% for(let i=0;i < team.players.length; i++) { %>
+        <div class="players">
+          <%=team.players[i].name%>
+          <%=team.players[i].position%>
+          <%=team.players[i].team%>
+        </div>
+      <% } %>
+      <nav>
+        <a href="/">Back to Homepage</a>
+      </nav>
+    </div>
   </body>
 </html>

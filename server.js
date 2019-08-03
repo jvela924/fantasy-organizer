@@ -4,6 +4,7 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const jquery = require('jquery');
 const app = express ();
 const db = mongoose.connection;
 const Team = require('./models/teams.js')
@@ -62,10 +63,30 @@ app.get('/' , (req, res) => {
   })
 });
 
+app.get('/new', (req,res) => {
+  res.render('new.ejs')
+})
+
 // CREATE
 app.post('/', (req,res) => {
+  let obj = {name:"", team:"", position:""}
+  obj.name = req.body.players[0]
+  let playersArr = []
+  req.body.players = playersArr
+  playersArr.push(obj)
+  console.log(obj)
   Team.create(req.body, (error, createdTeam) => {
+    console.log(req.body);
     res.send(createdTeam)
+  })
+})
+
+// SHOW
+app.get('/:id', (req,res) => {
+  Team.findById(req.params.id, (err, foundTeam) => {
+    res.render('show.ejs', {
+      team: foundTeam
+    })
   })
 })
 
