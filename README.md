@@ -1,2 +1,2 @@
-# fantasy-organizer
+# Fantasy Manager
 Code Along
