@@ -2,15 +2,13 @@ h1 {
   font-size: 50px;
 }
 
-.sport {
-  font-size: 30px;
+body {
+  background-color: #cbcbcb;
 }
 
 .teamLogo {
-  width: 150px;
-  height: 150px;
-  border-radius: 15px;
-  border: 1px solid blue;
+  width: 120px;
+  height: 120px;
 }
 
 .baseballContainer, .footballContainer {
@@ -18,10 +16,85 @@ h1 {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
+}
+
+.teamContainer {
+  background-color: white;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+.container {
+  display
 }
 
 .footballTeam, .baseballTeam {
   width: 33%;
+}
+
+h4 {
+  padding-bottom: 10px;
+}
+
+.rounded-circle-success {
+  background-color: var(--success);
+  width: 30px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.rounded-circle-warning {
+  background-color: var(--warning);
+  width: 30px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.rounded-circle-danger {
+  background-color: var(--danger);
+  width: 30px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.nav-item {
+  margin-left: 0;
+  padding-left: 20px;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+  color: white;
+}
+
+.navbar {
+  background-color: black;
+}
+
+.dropdown-menu {
+  display: none;
+  background-color: black;
+}
+
+.dropdown-item {
+  background-color: black;
+  color: white;
+  padding: none;
+  margin: 0;
 }

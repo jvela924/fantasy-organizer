@@ -84,7 +84,7 @@ app.post('/', (req,res) => {
   }
   req.body.players = playersArr
   Team.create(req.body, (error, createdTeam) => {
-    res.send(createdTeam)
+    res.redirect('/')
   })
 })
 

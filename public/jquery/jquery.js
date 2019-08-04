@@ -40,4 +40,17 @@ $('button').on('click', () => {
   $('#players').append($row)
 })
 
+let clicked = false
+
+$('.dropdown-toggle').on('click', () => {
+  if (clicked === false) {
+    $('.dropdown-menu').css("display", "block")
+    clicked = true
+  } else {
+    $('.dropdown-menu').css("display", "none")
+    clicked = false
+  }
+
+})
+
 })
