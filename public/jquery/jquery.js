@@ -13,6 +13,7 @@ addTeam();
 
 $('button').on('click', () => {
   const $row = $('<div>')
+  $row.addClass('newPlayers')
   $row.css("display", "flex")
   $row.css("flex-direction", "row")
   const $text1 = $('<p>')
@@ -36,7 +37,7 @@ $('button').on('click', () => {
   $row.append($input2)
   $row.append($text3)
   $row.append($input3)
-  $('#newPlayer').append($row)
+  $('#players').append($row)
 })
 
 })

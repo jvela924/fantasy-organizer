@@ -13,7 +13,7 @@
       Platform: <input type="text" name="platform" value="<%=team.platform%>"/><br>
       Place: <input type="text" name="place" value="<%=team.place%>"/><br>
       Players: <br>
-      <div id = "newPlayer">
+      <div>
       <% i = 0 %>
       <% while (i < team.players.length) { %>
         <div>
@@ -21,6 +21,7 @@
         <% i++ %>
         </div>
       <% } %>
+        <input type="submit" value="Save Changes">
       </div>
   </body>
 </html>

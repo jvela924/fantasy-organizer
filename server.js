@@ -116,6 +116,17 @@ app.get('/:id/edit', (req,res) => {
 })
 
 app.put('/:id', (req,res) => {
+  let playersArr = []
+  for (let i = 0; i < req.body.players.length; i+=3) {
+    let obj = {name:"", team:"", position:""}
+    obj.name = req.body.players[i]
+    obj.team = req.body.players[i+1]
+    obj.position = req.body.players[i+2]
+    playersArr.push(obj)
+    // console.log(obj);
+    // console.log(i);
+  }
+  req.body.players = playersArr
   Team.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
     res.redirect('/')
   })
