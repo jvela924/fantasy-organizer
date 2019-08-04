@@ -5,6 +5,22 @@
     <title></title>
   </head>
   <body>
-
+    <h1>Edit Page</h1>
+    <form action="/<%=team.id%>?_method=PUT" method="POST">
+      Team Name: <input type="text" name="name" value="<%=team.name%>"/><br>
+      Logo: <input type="text" name="logo" value="<%=team.logo%>"/><br>
+      Sport: <input type="text" name="sport" value="<%=team.sport%>"/><br>
+      Platform: <input type="text" name="platform" value="<%=team.platform%>"/><br>
+      Place: <input type="text" name="place" value="<%=team.place%>"/><br>
+      Players: <br>
+      <div id = "newPlayer">
+      <% i = 0 %>
+      <% while (i < team.players.length) { %>
+        <div>
+        Name: <input type="text" name="players" value="<%=team.players[i].name%>"/>Team: <input type="text" name="players" value="<%=team.players[i].team%>"/>Position: <input type="text" name="players" value="<%=team.players[i].position%>"/>
+        <% i++ %>
+        </div>
+      <% } %>
+      </div>
   </body>
 </html>

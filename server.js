@@ -63,20 +63,27 @@ app.get('/' , (req, res) => {
   })
 });
 
+// CREATE
 app.get('/new', (req,res) => {
   res.render('new.ejs')
 })
-
-// CREATE
+// POST
 app.post('/', (req,res) => {
-  let obj = {name:"", team:"", position:""}
-  obj.name = req.body.players[0]
   let playersArr = []
+  // console.log(req.body.players);
+  // console.log(req.body.players.length);
+  // console.log();
+  for (let i = 0; i < req.body.players.length; i+=3) {
+    let obj = {name:"", team:"", position:""}
+    obj.name = req.body.players[i]
+    obj.team = req.body.players[i+1]
+    obj.position = req.body.players[i+2]
+    playersArr.push(obj)
+    // console.log(obj);
+    // console.log(i);
+  }
   req.body.players = playersArr
-  playersArr.push(obj)
-  console.log(obj)
   Team.create(req.body, (error, createdTeam) => {
-    console.log(req.body);
     res.send(createdTeam)
   })
 })
@@ -87,6 +94,30 @@ app.get('/:id', (req,res) => {
     res.render('show.ejs', {
       team: foundTeam
     })
+  })
+})
+
+// DELETE
+app.delete('/:id', (req,res) => {
+  Team.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect('/')
+  })
+})
+
+// EDIT
+app.get('/:id/edit', (req,res) => {
+  Team.findById(req.params.id, (err, foundTeam) => {
+    res.render('edit.ejs',
+    {
+      team:foundTeam
+    }
+    )
+  })
+})
+
+app.put('/:id', (req,res) => {
+  Team.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
+    res.redirect('/')
   })
 })
 

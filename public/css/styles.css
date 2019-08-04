@@ -16,7 +16,7 @@ h1 {
 .baseballContainer, .footballContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   width: 75%;
   margin: 0 auto;
