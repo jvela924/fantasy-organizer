@@ -4,28 +4,73 @@
     <meta charset="utf-8">
     <title><%=team.name%></title>
     <% include ./partials/style.ejs %>
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1><%=team.name%></h1>
-    <form action="/<%=team.id%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE"/>
-    </form>
-    <a href="/<%=team.id%>/edit">Edit Team</a>
-    <div class="teamShow">
-      <img src="<%=team.logo%>" alt="<%=team.name%>">
-      <h3><%=team.sport%></h3>
-      <p><%=team.platform%></p>
-      <p><%=team.place%></p>
-      <% for(let i=0;i < team.players.length; i++) { %>
-        <div class="players">
-          <p><%=team.players[i].name%></p>
-          <p><%=team.players[i].position%></p>
-          <p><%=team.players[i].team%></p>
+    <nav class="navbar navbar-expand-lg">
+      <div class="navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="site-name" href="/">Fantasy Manager</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Teams
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#"></a>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/new">Add New Team</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link"href="#">Support</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container teamContainer">
+      <div class="row">
+        <div class="col">
+          <div>
+            <h1 class="center"><%=team.name%></h1>
+          </div>
+          <div class="flex">
+            <a class="btn btn-primary mb-2 edit" href="/<%=team.id%>/edit">EDIT TEAM</a>
+            <form action="/<%=team.id%>?_method=DELETE" method="POST">
+              <input class="btn btn-danger mb-2" type="submit" value="DELETE"/>
+            </form>
+          </div>
+          <div class="flexCol">
+            <img class="fluid-image rounded" src="<%=team.logo%>" alt="<%=team.name%>">
+            <h3><%=team.sport%></h3>
+            <p>Platform: <%=team.platform%></p>
+            <p>Place: <%=team.place%></p>
+            <a class="btn btn-primary btn-lg active homepage" href="/">Back to Homepage</a>
+          </div>
         </div>
-      <% } %>
-      <nav>
-        <a href="/">Back to Homepage</a>
-      </nav>
+      <div class="col">
+        <h3>Players</h3>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Name</th>
+              <th scope="col">Team</th>
+              <th scope="col">Position</th>
+            </tr>
+          </thead>
+          <tbody>
+        <% for(let i=0;i < team.players.length; i++) { %>
+          <tr>
+            <th scope="row"></th>
+            <td><%=team.players[i].name%></td>
+            <td><%=team.players[i].position%></td>
+            <td><%=team.players[i].team%></td>
+        <% } %>
+      </table>
+      </div>
     </div>
   </body>
 </html>

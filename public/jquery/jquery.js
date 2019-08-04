@@ -50,7 +50,6 @@ $('.dropdown-toggle').on('click', () => {
     $('.dropdown-menu').css("display", "none")
     clicked = false
   }
-
 })
 
 })

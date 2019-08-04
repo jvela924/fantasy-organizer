@@ -67,6 +67,7 @@ app.get('/' , (req, res) => {
 app.get('/new', (req,res) => {
   res.render('new.ejs')
 })
+
 // POST
 app.post('/', (req,res) => {
   let playersArr = []
@@ -83,6 +84,7 @@ app.post('/', (req,res) => {
     // console.log(i);
   }
   req.body.players = playersArr
+  teams.push(req.body)
   Team.create(req.body, (error, createdTeam) => {
     res.redirect('/')
   })
