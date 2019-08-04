@@ -128,7 +128,7 @@ app.put('/:id', (req,res) => {
   }
   req.body.players = playersArr
   Team.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel) => {
-    res.redirect('/')
+    res.redirect('/' + req.params.id)
   })
 })
 
