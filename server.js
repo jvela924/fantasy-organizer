@@ -93,6 +93,15 @@ app.post('/', (req,res) => {
   })
 })
 
+// About
+app.get('/about/', (req,res) => {
+  Team.find({}, (error, allTeams)=> {
+    res.render('about.ejs', {
+      teams: allTeams
+    });
+  })
+});
+
 // SHOW
 app.get('/:id', (req,res) => {
   Team.findById(req.params.id, (err, foundTeam) => {

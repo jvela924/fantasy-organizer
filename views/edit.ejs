@@ -25,14 +25,14 @@
             <a class="nav-link" href="/new">Add New Team</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link"href="#">Support</a>
+            <a class="nav-link"href="/about">About / Support</a>
           </li>
         </ul>
       </div>
     </nav>
     <div class="container teamContainer">
-      <div>
-        <h1 class="center">Edit <%=team.name%></h1>
+      <div class="wideContainer">
+        <h2 class="indexh2">Edit <%=team.name%></h2>
       </div>
     <form action="/<%=team.id%>?_method=PUT" method="POST">
       <form action="/" method="POST">
