@@ -51,6 +51,7 @@ h4 {
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .rounded-circle-warning {
@@ -59,6 +60,7 @@ h4 {
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .rounded-circle-danger {
@@ -67,6 +69,7 @@ h4 {
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .navbar-nav {
@@ -146,6 +149,7 @@ h4 {
 .edit {
   padding: 5px;
   height: 38px;
+  font-weight: bold;
 }
 
 .showContainer {
@@ -176,6 +180,13 @@ h4 {
   width: 100%;
 }
 
+.flex-row {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+
 h3, h4 {
   text-align: center;
   padding-top: 15px;
@@ -192,4 +203,50 @@ h3, h4 {
 
 table {
   margin-top: 25px;
+}
+
+.new-inputs {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  font-size: 20px;
+}
+
+.form-group {
+  padding: 0 20px 0 20px;
+}
+
+.form-row {
+  padding: 0 20px 0 20px;
+  margin-bottom: -40px;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.player-info {
+  padding: 3px;
+  margin: 5px;
+}
+
+h5 {
+  margin-right: 140px;
+  font-weight: normal;
+}
+
+.btn-secondary {
+  margin: 10px 0 10px 5px;
+}
+
+.add-team {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.btn-danger {
+  font-weight: bold;
 }

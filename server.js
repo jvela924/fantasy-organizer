@@ -84,7 +84,6 @@ app.post('/', (req,res) => {
     // console.log(i);
   }
   req.body.players = playersArr
-  teams.push(req.body)
   Team.create(req.body, (error, createdTeam) => {
     res.redirect('/')
   })

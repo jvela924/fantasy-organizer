@@ -32,25 +32,57 @@
         </ul>
       </div>
     </nav>
-    <h1>New Team Page</h1>
-    <form action="/" method="POST">
-      Team Name: <input type="text" name="name"/><br>
-      Logo: <input type="text" name="logo"/><br>
-      Sport: <input type="text" name="sport"/><br>
-      Platform: <input type="text" name="platform"/><br>
-      Place: <input type="text" name="place"/><br>
-      Players:<br>
-      <div id = "players">
-      <% i = 0 %>
-      <% while (i < 10) { %>
-        <div>
-        Name: <input type="text" name="players"/>Team: <input type="text" name="players"/>Position: <input type="text" name="players"/>
-        <% i++ %>
-        </div>
-      <% } %>
+    <div class="container teamContainer">
+      <div>
+        <h1 class="center">Add New Team</h1>
       </div>
-      <button type="button" name="button">Add Another Player</button>
-      <input type="submit" value="Add Team">
-    </form>
+      <form action="/" method="POST">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Team Name</label>
+          <input type="text" class="form-control" name="name"/><br>
+        </div>
+        <div class="form-group">
+          <label for="formGroupLogoInput">Logo</label>
+          <input type="text" class="form-control" name="logo"/><br>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm">
+            <label for="inputEmail4">Sport</label>
+            <input type="text" class="form-control" name="sport"/><br>
+          </div>
+          <div class="form-group col-sm">
+            <label for="inputEmail4">Platform</label>
+            <input type="text" class="form-control" name="platform"/><br>
+          </div>
+          <div class="form-group col-sm">
+            <label for="inputEmail4">Place</label>
+            <input type="number" class="form-control" name="place"/><br>
+          </div>
+        </div>
+        <div class="container flex-col">
+          <h4 class="align-left">Players</h4>
+        <div id = "players">
+          <div class="flex-row">
+            <h5>Name</h5>
+            <h5>Team</h5>
+            <h5>Position</h5>
+          </div>
+        <% i = 0 %>
+        <% while (i < 10) { %>
+          <div class="flex-row">
+            <input class="player-info" type="text" name="players"/>
+            <input class="player-info" type="text" name="players"/>
+            <input class="player-info" type="text" name="players"/>
+          <% i++ %>
+          </div>
+        <% } %>
+        </div>
+        <button type="button" name="button" class="btn btn-secondary">Add Another Player</button>
+        <br>
+        <div class="flexCol">
+          <input class="btn btn-primary add-team" type="submit" value="Create Team">
+        </div>
+      </form>
+    </div>
   </body>
 </html>
