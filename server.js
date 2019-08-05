@@ -9,6 +9,7 @@ const app = express ();
 const db = mongoose.connection;
 const Team = require('./models/teams.js')
 
+
 //___________________
 //Port
 //___________________
@@ -47,7 +48,6 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
-
 
 //___________________
 // Routes
@@ -118,9 +118,6 @@ app.get('/:id/edit', (req,res) => {
     }
     )
   })
-  Team.find({}, (error, allTeams)=> {
-      teams: allTeams
-    });
 })
 
 app.put('/:id', (req,res) => {
