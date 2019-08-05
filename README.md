@@ -34,5 +34,13 @@ I didn't implement signup/login functionality yet. Also, a user needs to go into
 
 Also, I was unable to get the full nav functionality to work on show and edit pages, since they were using specific team IDs. 
 
+## Wireframes
+
+#### Index
+![Index wireframe](https://github.com/jvela924/fantasy-organizer/blob/master/images/Index.png)
+
+#### Show
+![Show wireframe](https://github.com/jvela924/fantasy-organizer/blob/master/images/show.png)
+
 ## Notes
 * How to implement signup/login so that each user sees a different view of their teams?
