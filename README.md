@@ -3,6 +3,9 @@
 ## About
 Fantasy Manager is an app used to manually log your fantasy sports teams, independant of platform. For regular fantasy sports managers, it solves the issue of having to switch between two-plus apps to view all of your teams. Although their is no add/drop, trade, or lineup functionality, Fantasy Manager offers an easy to use experience for viewing your teams at a glance. 
 
+### Live Site
+[Fantasy Manager](https://fantasy-manager.herokuapp.com/)
+
 ## Approach
 I started by building out the basic CRUD functionality with my seed data. I then moved on to styling the app, using the Bootstrap CSS framework to build a nav bar and a players table.
 
