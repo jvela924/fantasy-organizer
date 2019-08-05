@@ -36,10 +36,10 @@ Also, I was unable to get the full nav functionality to work on show and edit pa
 
 ## Wireframes
 
-#### Index
+### Index
 ![Index wireframe](https://github.com/jvela924/fantasy-organizer/blob/master/images/Index.png)
 
-#### Show
+### Show
 ![Show wireframe](https://github.com/jvela924/fantasy-organizer/blob/master/images/show.png)
 
 ## Notes
