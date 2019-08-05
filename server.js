@@ -65,7 +65,11 @@ app.get('/' , (req, res) => {
 
 // CREATE
 app.get('/new', (req,res) => {
-  res.render('new.ejs')
+  Team.find({}, (error, allTeams)=> {
+    res.render('new.ejs', {
+      teams: allTeams
+    });
+  })
 })
 
 // POST
@@ -114,6 +118,9 @@ app.get('/:id/edit', (req,res) => {
     }
     )
   })
+  Team.find({}, (error, allTeams)=> {
+      teams: allTeams
+    });
 })
 
 app.put('/:id', (req,res) => {
