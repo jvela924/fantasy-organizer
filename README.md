@@ -7,9 +7,9 @@ Fantasy Manager is an app used to manually log your fantasy sports teams, indepe
 #### User Stories
 * User will be able to enter their team name and add a logo.
 * Users will be able to edit their teams and manually add players.
-** Players have a name, image, team, and position
+- Players have a name, image, team, and position
 * Users will be able to edit players, including images, names, teams, and positions.
 * Implement autofill if possible for teams and positions in the player model
 * Users will be able to delete a player and a team
 * If possible:
-** User will be able to login to their teams
+- User will be able to login to their teams
