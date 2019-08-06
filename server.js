@@ -93,7 +93,7 @@ app.post('/', (req,res) => {
   })
 })
 
-// About
+// ABOUT
 app.get('/about/', (req,res) => {
   Team.find({}, (error, allTeams)=> {
     res.render('about.ejs', {

@@ -7,6 +7,11 @@ body {
   background-color: #cbcbcb;
 }
 
+p {
+  margin: 0 auto;
+  padding: 14px;
+}
+
 .teamLogo {
   width: 130px;
   height: 130px;
@@ -47,7 +52,7 @@ h4 {
 
 .rounded-circle-success {
   background-color: var(--success);
-  width: 30px;
+  width: 40px;
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 20px;
@@ -56,7 +61,7 @@ h4 {
 
 .rounded-circle-warning {
   background-color: var(--warning);
-  width: 30px;
+  width: 40px;
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 20px;
@@ -65,7 +70,7 @@ h4 {
 
 .rounded-circle-danger {
   background-color: var(--danger);
-  width: 30px;
+  width: 40px;
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 20px;
@@ -85,6 +90,7 @@ h4 {
 
 .nav-link {
   color: white;
+  font-size: 19px;
 }
 
 .nav-link:hover {
@@ -109,7 +115,7 @@ h4 {
 }
 
 .site-name {
-  font-size: 30px;
+  font-size: 35px;
   font-family: 'Bangers', cursive;
 }
 
@@ -246,4 +252,28 @@ h5 {
   margin-top: 40px;
   margin-bottom: 20px;
   font-size: 24px;
+}
+
+.btn-gradient {
+  background-image: linear-gradient(to bottom right, red, yellow);
+  border-radius: 7px;
+  margin: 20px auto;
+}
+
+.support-link {
+  color: black;
+  font-size: 20px;
+  margin: 20px;
+  text-decoration-style: none;
+  width: 100px;
+  height: 50px;
+
+}
+
+.support-link:hover {
+  color: black;
+  font-size: 20px;
+  margin: 20px;
+  text-decoration: none;
+  font-weight: bold;
 }
