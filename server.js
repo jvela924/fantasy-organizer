@@ -88,6 +88,7 @@ app.post('/', (req,res) => {
     // console.log(i);
   }
   req.body.players = playersArr
+  req.body.sport = req.body.sport.charAt(0).toUpperCase() + req.body.sport.slice(1)
   Team.create(req.body, (error, createdTeam) => {
     res.redirect('/')
   })
