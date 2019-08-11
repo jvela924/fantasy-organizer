@@ -123,7 +123,8 @@ app.post('/', (req,res) => {
 app.get('/about/', (req,res) => {
   Team.find({}, (error, allTeams)=> {
     res.render('about.ejs', {
-      teams: allTeams
+      teams: allTeams,
+      currentUser: req.session.currentUser
     });
   })
 });
@@ -132,7 +133,7 @@ app.get('/about/', (req,res) => {
 app.get('/:id', (req,res) => {
   Team.findById(req.params.id, (err, foundTeam) => {
     res.render('show.ejs', {
-      team: foundTeam
+      team: foundTeam,
     })
   })
 })

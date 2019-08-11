@@ -10,8 +10,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% for(let i=0; i < teams.length; i++) { %>
-          <a class="dropdown-item" href="/<%=teams[i].id%>"><%=teams[i].name%></a>
-          <% } %>
+            <a class="dropdown-item" href="/<%=teams[i].id%>"><%=teams[i].name%></a>
+        <% } %>
         </div>
       </li>
       <li class="nav-item active">
@@ -19,6 +19,9 @@
       </li>
       <li class="nav-item active">
         <a class="nav-link"href="/about">About</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link"href="/sessions/">Log In</a>
       </li>
     </ul>
   </div>

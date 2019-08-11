@@ -37,9 +37,19 @@ $('button').on('click', () => {
 
 let clicked = false
 
-$('.dropdown-toggle').on('click', () => {
+$('#navbarDropdown1').on('click', () => {
   if (clicked === false) {
-    $('.dropdown-menu').css("display", "block")
+    $('#dropdown-teams').css("display", "block")
+    clicked = true
+  } else {
+    $('.dropdown-menu').css("display", "none")
+    clicked = false
+  }
+})
+
+$('#navbarDropdown2').on('click', () => {
+  if (clicked === false) {
+    $('#dropdown-form').css("display", "block")
     clicked = true
   } else {
     $('.dropdown-menu').css("display", "none")

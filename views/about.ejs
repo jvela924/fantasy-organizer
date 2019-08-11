@@ -8,7 +8,44 @@
     <script src='/jquery/jquery.js' type="text/javascript"></script>
   </head>
   <body>
-    <% include ./partials/nav.ejs %>
+    <% if(currentUser) { %>
+    <nav class="navbar navbar-expand-lg">
+      <div class="navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="site-name" href="/">Fantasy Manager</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Teams
+            </a>
+            <div class="dropdown-menu" id="dropdown-teams" aria-labelledby="navbarDropdown">
+              <% for(let i=0; i < teams.length; i++) { %>
+                <% if (teams[i].username === currentUser.username) { %>
+                <a class="dropdown-item" href="/<%=teams[i].id%>"><%=teams[i].name%></a>
+            <% } %>
+            <% } %>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/new">Add New Team</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link"href="/about">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Welcome, <%=currentUser.username%>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-form">
+              <form action="/sessions?_method=DELETE" method="POST">
+                <input class="dropdown-item" type="submit" value="Logout"/>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="container teamContainer">
       <div class="wideContainer">
         <h2 class="indexh2">About</h2>
@@ -20,5 +57,41 @@
       <div class="flexCol">
         <button class="btn-gradient"><a class="support-link" href="mailto:jvela924@gmail.com?subject=Fantasy Manager Feedback">Contact Us</a></button>
     </div>
+    <% } else { %>
+      <nav class="navbar navbar-expand-lg">
+        <div class="navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="site-name" href="/">Fantasy Manager</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Teams
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/new">Add New Team</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link"href="/about">About</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link"href="/sessions/new">Log In</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container teamContainer">
+        <div class="wideContainer">
+          <h2 class="indexh2">About</h2>
+        </div>
+        <div>
+          <p>With Fantasy Manager, you can view all of your fantasy teams across multiple sports and platforms. Easily edit team information and manage your way to a championship.</p>
+          <p>At Fantasy Manager, we're open to all feedback, suggestions, and questions.</p>
+        </div>
+        <div class="flexCol">
+          <button class="btn-gradient"><a class="support-link" href="mailto:jvela924@gmail.com?subject=Fantasy Manager Feedback">Contact Us</a></button>
+      </div>
+      <% } %>
   </body>
 </html>

@@ -102,7 +102,12 @@ h4 {
   background-color: black;
 }
 
-.dropdown-menu {
+#dropdown-teams {
+  display: none;
+  background-color: black;
+}
+
+#dropdown-form {
   display: none;
   background-color: black;
 }
@@ -291,4 +296,8 @@ h5 {
 .welcome {
   margin-left: 50px;
   margin-top: 20px;
+}
+
+.create-user {
+  margin-bottom: 50px;
 }
