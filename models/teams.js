@@ -6,7 +6,8 @@ const teamSchema = new mongoose.Schema({
   sport: {type: String, required: true},
   platform: {type: String, required: false},
   place: {type: Number, min: 1},
-  players: [{name: String, team: String, position: String}]
+  players: [{name: String, team: String, position: String}],
+  username: {type: String}
 })
 
 const Team = mongoose.model('Team', teamSchema);

@@ -8,6 +8,7 @@ const jquery = require('jquery');
 const app = express ();
 const db = mongoose.connection;
 const Team = require('./models/teams.js')
+const session = require('express-session');
 
 
 //___________________
@@ -49,25 +50,44 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+app.use(session({
+    secret: "chickenwafflesurprise", //some random string
+    resave: false,
+    saveUninitialized: false
+}));
+
 //___________________
 // Routes
 //___________________
 //localhost:3000
 
+const usersController = require('./controllers/users.js');
+app.use('/users', usersController);
+
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
+
 // INDEX
 app.get('/' , (req, res) => {
   Team.find({}, (error, allTeams)=> {
     res.render('index.ejs', {
-      teams: allTeams
+      teams: allTeams,
+      currentUser: req.session.currentUser
     });
   })
 });
+
+// app.get('/app', (req, res)=>{
+//     res.send('the party');
+// });
+
 
 // CREATE
 app.get('/new', (req,res) => {
   Team.find({}, (error, allTeams)=> {
     res.render('new.ejs', {
-      teams: allTeams
+      teams: allTeams,
+      currentUser: req.session.currentUser
     });
   })
 })
@@ -89,9 +109,14 @@ app.post('/', (req,res) => {
   }
   req.body.players = playersArr
   req.body.sport = req.body.sport.charAt(0).toUpperCase() + req.body.sport.slice(1)
+  // req.body.username = req.session.currentUser
+  console.log(req.session.currentUser.username);
+  req.body.username = req.session.currentUser.username
+  // console.log(req.session.currentUser);
   Team.create(req.body, (error, createdTeam) => {
     res.redirect('/')
   })
+  console.log(req.body);
 })
 
 // ABOUT
